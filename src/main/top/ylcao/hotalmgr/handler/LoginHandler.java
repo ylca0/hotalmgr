@@ -35,12 +35,16 @@ public class LoginHandler extends KeyAdapter implements ActionListener {
             loginView.getAccountText().setText("");
             loginView.getPasswordText().setText("");
         } else if (buttonText.equals("登陆")) {
-            loginMethod();
+            try {
+                loginMethod();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
         }
 
     }
 
-    private void loginMethod() {
+    private void loginMethod() throws IOException {
         String username = loginView.getAccountText().getText();
         String password = new String(loginView.getPasswordText().getPassword());
 
@@ -88,7 +92,11 @@ public class LoginHandler extends KeyAdapter implements ActionListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (KeyEvent.VK_ENTER == e.getKeyCode()) {
-            loginMethod();
+            try {
+                loginMethod();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
         }
     }
 

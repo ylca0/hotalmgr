@@ -15,12 +15,13 @@ public class Store {
     private HashMap<Integer, Integer> saleHashMap;
     private ArrayList<Room> roomList;
 
-    public Store(String name, String address, String phone, String manager, String saleString) {
+    public Store(String name, String address, String phone, String manager, String saleString) throws IOException {
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.manager = manager;
         this.roomList = initRoomList();
+        updateAllRoomFile();
         updateSaleHashMap(saleString);
         Log.p("成功构造门店:" + this.toString());
     }
@@ -61,11 +62,12 @@ public class Store {
         return name + ";" + address + ";" + phone + ";" + manager + ";" + saleString.toString() + ";";
     }
 
-    private ArrayList<Room> initRoomList() {
+    private ArrayList<Room> initRoomList() throws IOException {
         File dir = new File(new File("").getAbsolutePath() + "\\data\\");
         for (int i = 0; i < Objects.requireNonNull(dir.listFiles()).length; i++) {
-            String filename = Objects.requireNonNull(dir.listFiles())[i].getName();
-            if ( filename.equals("room_" + this.name + ".txt") ) {
+            // 寻找roomfile
+            String filename = "room_" + name + ".txt";
+            if ( filename.equals(Objects.requireNonNull(dir.listFiles())[i].getName()) ) {
                 Log.p("读取数据:" + filename);
                 this.roomFile = new File(dir.getAbsolutePath() + "\\" + filename);
                 StringBuilder content = new StringBuilder();
@@ -91,7 +93,30 @@ public class Store {
                 return storeInfo;
             }
         }
+        File newRoomFile = new File(new File("").getAbsolutePath() + "\\data\\room_" + name + ".txt");
+        if(newRoomFile.createNewFile()) {
+            Log.p("创建文件:" + newRoomFile.getAbsolutePath());
+            roomFile = newRoomFile;
+            ArrayList<Room> storeInfo = new ArrayList<>();
+            Room room = new Room("未定义", "0", "否", "2022:05:31:12:00:00-2022:05:31:16:00:00", "", "");
+            storeInfo.add(room);
+            return storeInfo;
+        }
+        Log.p("roomList初始化失败!");
         return null;
+    }
+
+
+
+    public void updateAllRoomFile() throws IOException {
+        BufferedWriter out = new BufferedWriter(new FileWriter(roomFile.getAbsolutePath()));
+        for (Room room : roomList) {
+            out.write(room.getFormatRoomInfo());
+            if (!roomList.get(roomList.size()-1).equals(room)) {
+                out.write("\n");
+            }
+        }
+        out.close();
     }
 
 

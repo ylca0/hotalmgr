@@ -69,11 +69,32 @@ public class AddStoreView extends JFrame{
         confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                store = new Store(storeNameField.getText(), storeAddressField.getText(), storePhoneField.getText(), storeManagerField.getText(), "");
-                // 创建room文件
-
+                if (storeNameField.getText().length() == 0 || storeAddressField.getText().length() == 0 || storeManagerField.getText().length() == 0 || storePhoneField.getText().length() == 0) {
+                    JOptionPane.showMessageDialog(AddStoreView.this, "请输入完整信息!");
+                    return;
+                }
+                try {
+                    store = new Store(storeNameField.getText(), storeAddressField.getText(), storePhoneField.getText(), storeManagerField.getText(), "1:0,2:0");
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                // 添加到store列表里
+                storeHandler.getStoreView().getAllStoreInfo().add(store);
                 // 更新table
+                storeHandler.getStoreView().getAllStoreVector().addElement(new Vector<String>());
+                int size = storeHandler.getStoreView().getAllStoreVector().size();
+                storeHandler.getStoreView().getAllStoreVector().get(size-1).addElement(storeNameField.getText());
+                storeHandler.getStoreView().getAllStoreVector().get(size-1).addElement(storeAddressField.getText());
+                storeHandler.getStoreView().getAllStoreVector().get(size-1).addElement(storeManagerField.getText());
+                storeHandler.getStoreView().getAllStoreVector().get(size-1).addElement(storePhoneField.getText());
+                storeHandler.getStoreView().getTableModel().fireTableRowsUpdated(size-1, size-1);
 
+                // 更新store文件
+                try {
+                    storeHandler.updateAllStoreFile();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
                 Log.p("添加门店完成:" + store.getFormatStoreInfo());
                 AddStoreView.this.dispose();
             }

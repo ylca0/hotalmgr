@@ -26,7 +26,7 @@ public class StoreView extends JFrame {
     JTable jTable;
     DefaultTableModel tableModel;
 
-    public StoreView(){
+    public StoreView() throws IOException {
         super("门店管理");
         initAllStoreInfo();
         initAllStudentsTable();
@@ -44,14 +44,14 @@ public class StoreView extends JFrame {
         setVisible(true);
     }
 
-    private void initAllStoreInfo() {
+    private void initAllStoreInfo() throws IOException {
         File dataDirectory = new File(new File("").getAbsolutePath() + "\\data\\");
         this.allStoreInfo = initStoreFile(dataDirectory);
         assert allStoreInfo != null;
         Log.p("总共有" + String.valueOf(allStoreInfo.size()) + "个门店");
     }
 
-    private ArrayList<Store> initStoreFile(File dir) {
+    private ArrayList<Store> initStoreFile(File dir) throws IOException {
         for (int i = 0; i < Objects.requireNonNull(dir.listFiles()).length; i++) {
             String filename = Objects.requireNonNull(dir.listFiles())[i].getName();
             // 搜索到唯一的store.txt文件

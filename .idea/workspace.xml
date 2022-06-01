@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2bd6bad-be03-407f-bad4-050b2d40bb94" name="Changes" comment="Update Info Complete">
-      <change afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/AddStoreView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/EditStoreView.java" afterDir="false" />
+    <list default="true" id="b2bd6bad-be03-407f-bad4-050b2d40bb94" name="Changes" comment="Update some function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/room_天上人间.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/room_纽约大酒店.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/room_长沙大酒店.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/store.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/store.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/LoginHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/LoginHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/RoomHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/RoomHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/StoreHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/StoreHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/RoomView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/AddStoreView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/AddStoreView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/StoreView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/StoreView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +141,7 @@
       <workItem from="1653976763870" duration="10368000" />
       <workItem from="1653995903384" duration="12339000" />
       <workItem from="1654012039544" duration="1176000" />
-      <workItem from="1654013234794" duration="13660000" />
+      <workItem from="1654013234794" duration="17308000" />
     </task>
     <task id="LOCAL-00001" summary="UI completed">
       <created>1654012278113</created>
@@ -184,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654060237848</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update some function">
+      <created>1654069886492</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654069886492</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +209,17 @@
     </ignored-roots>
     <MESSAGE value="UI completed" />
     <MESSAGE value="Update Info Complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Info Complete" />
+    <MESSAGE value="Update some function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update some function" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

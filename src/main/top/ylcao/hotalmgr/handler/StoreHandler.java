@@ -2,6 +2,7 @@ package top.ylcao.hotalmgr.handler;
 
 import top.ylcao.hotalmgr.main.Log;
 import top.ylcao.hotalmgr.main.Store;
+import top.ylcao.hotalmgr.view.AddStoreView;
 import top.ylcao.hotalmgr.view.EditStoreView;
 import top.ylcao.hotalmgr.view.RoomView;
 import top.ylcao.hotalmgr.view.StoreView;
@@ -120,19 +121,13 @@ public class StoreHandler extends MouseAdapter {
         });
         popupMenu.add(item);
 
-        // TODO: 完成剩余功能
+
         item = new JMenuItem("添加门店");
         item.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // 更新store文件
-                try {
-                    updateAllStoreFile();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
-
-                Log.p("添加门店:");
+                new AddStoreView(StoreHandler.this);
+                Log.p("添加门店:" + storeView.getAllStoreInfo().get(storeView.getAllStoreInfo().size()-1).getName());
             }
         });
         popupMenu.add(item);

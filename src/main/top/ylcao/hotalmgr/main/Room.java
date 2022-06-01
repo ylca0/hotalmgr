@@ -91,6 +91,10 @@ public class Room {
     public String getPhone() {
         return phone;
     }
+
+    public String getFormatRoomInfo() {
+        return category + ";" + price + ";" + isUsing + ";" + date + ";" + guest + ";" + phone + ";";
+    }
 }
 
 
