@@ -152,4 +152,12 @@ public class Store {
         this.manager = manager;
     }
 
+    public String getFormatSaleHashMap() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Integer integer : saleHashMap.keySet()) {
+            stringBuilder.append(integer).append("月营收:").append(saleHashMap.get(integer)).append("元\n");
+        }
+        stringBuilder.deleteCharAt(stringBuilder.lastIndexOf("\n"));
+        return stringBuilder.toString();
+    }
 }

@@ -89,6 +89,7 @@ public class StoreHandler extends MouseAdapter {
             public void actionPerformed(ActionEvent e) {
                 String storeName = storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()).getName();
                 for (int r = 0; r < StoreHandler.this.getStoreView().getAllStoreInfo().size(); r++) {
+                    // 找到右击的门店
                     if (StoreHandler.this.getStoreView().getAllStoreInfo().get(r).getName().equals(storeName)) {
                         // 删除room文件
                         StoreHandler.this.getStoreView().getAllStoreInfo().get(r).getRoomFile().delete();
@@ -116,6 +117,13 @@ public class StoreHandler extends MouseAdapter {
         item.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String storeName = storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()).getName();
+                for (int r = 0; r < storeView.getAllStoreInfo().size(); r++) {
+                    // 找到右击的门店
+                    if (storeView.getAllStoreInfo().get(r).getName().equals(storeName)) {
+                        JOptionPane.showMessageDialog(storeView, "本店营收统计:\n" + storeView.getAllStoreInfo().get(r).getFormatSaleHashMap());
+                    }
+                }
                 Log.p("统计报表:" + storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()).getName());
             }
         });

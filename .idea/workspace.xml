@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2bd6bad-be03-407f-bad4-050b2d40bb94" name="Changes" comment="Update some function">
+    <list default="true" id="b2bd6bad-be03-407f-bad4-050b2d40bb94" name="Changes" comment="Update add store function">
+      <change afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/Statistics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/top/ylcao/hotalmgr/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/top/ylcao/hotalmgr/Statistics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/LoginHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/LoginHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/StoreHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/StoreHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/AddStoreView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/AddStoreView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/StoreView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/StoreView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +100,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="top.ylcao.hotalmgr.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.ylcao.hotalmgr.Main" />
+      <module name="hotalmgr" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ylcao.hotalmgr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="top.ylcao.hotalmgr.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="top.ylcao.hotalmgr.main.Main" />
       <module name="hotalmgr" />
@@ -117,6 +129,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.top.ylcao.hotalmgr.main.Main" />
+        <item itemvalue="Application.top.ylcao.hotalmgr.Main" />
         <item itemvalue="Application.mouse" />
         <item itemvalue="Application.test" />
         <item itemvalue="Application.Main" />
@@ -141,7 +154,7 @@
       <workItem from="1653976763870" duration="10368000" />
       <workItem from="1653995903384" duration="12339000" />
       <workItem from="1654012039544" duration="1176000" />
-      <workItem from="1654013234794" duration="17308000" />
+      <workItem from="1654013234794" duration="18799000" />
     </task>
     <task id="LOCAL-00001" summary="UI completed">
       <created>1654012278113</created>
@@ -185,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654069886492</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update add store function">
+      <created>1654073665394</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654073665394</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +230,8 @@
     <MESSAGE value="UI completed" />
     <MESSAGE value="Update Info Complete" />
     <MESSAGE value="Update some function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update some function" />
+    <MESSAGE value="Update add store function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update add store function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
