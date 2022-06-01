@@ -24,6 +24,7 @@ public class StoreView extends JFrame {
     private File storeFile;
     Container contentPane;
     JTable jTable;
+    DefaultTableModel tableModel;
 
     public StoreView(){
         super("门店管理");
@@ -103,7 +104,7 @@ public class StoreView extends JFrame {
         }
         // 初始化表格
         // 新建默认表模板
-        DefaultTableModel tableModel = new DefaultTableModel();
+        this.tableModel = new DefaultTableModel();
         // 将所有学生Vector和表头Vector设置到表模版
         tableModel.setDataVector(allStoreVector, studentTableHeader);
         // JTable和table关联，只需要更新model
@@ -169,4 +170,7 @@ public class StoreView extends JFrame {
         return storeFile;
     }
 
+    public DefaultTableModel getTableModel() {
+        return tableModel;
+    }
 }

@@ -8,7 +8,6 @@ import top.ylcao.hotalmgr.main.Log;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Objects;
 
 
 public class LoginView extends JFrame {
@@ -54,7 +53,7 @@ public class LoginView extends JFrame {
 
         contentPane.add(title, BorderLayout.NORTH);
         contentPane.add(loginPanel, BorderLayout.CENTER);
-        //自动化页面大小--全屏
+
         setSize(300, 400);
         int fraWidth = this.getWidth();//frame的宽
         int fraHeight = this.getHeight();//frame的高
@@ -78,7 +77,6 @@ public class LoginView extends JFrame {
 
     /**
      * frame中的控件自适应frame大小：改变大小位置和字体
-
      */
     public static void modifyComponentSize(JFrame frame,float proportionW,float proportionH){
 
@@ -145,20 +143,7 @@ public class LoginView extends JFrame {
         springLayout.putConstraint(SpringLayout.WEST, resetButton, -(Spring.sum(Spring.sum(Spring.width(resetButton), Spring.width(loginButton)), Spring.constant(40)).getValue() / 2), SpringLayout.HORIZONTAL_CENTER, loginPanel);
 
 
-
-        // 如果是MacOS则设置Dock栏图标
-//        if (System.getProperty("os.name").startsWith("Mac OS")) {
-//            Application.getApplication().setDockIconImage(new ImageIcon(Objects.requireNonNull(LoginInter.class.getClassLoader().getResource("dockIcon.png"))).getImage());
-//        }
-        // 自定义图标
-//        setIconImage(new ImageIcon(Objects.requireNonNull(LoginView.class.getClassLoader().getResource("icon.png"))).getImage());
-        // 设置尺寸
-//        setSize(380, 250);
-
-
     }
-
-
 
     public JTextField getAccountText() {
         return accountText;

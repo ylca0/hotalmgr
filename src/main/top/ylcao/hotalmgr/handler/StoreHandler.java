@@ -1,8 +1,8 @@
 package top.ylcao.hotalmgr.handler;
 
 import top.ylcao.hotalmgr.main.Log;
-import top.ylcao.hotalmgr.main.Room;
 import top.ylcao.hotalmgr.main.Store;
+import top.ylcao.hotalmgr.view.EditStoreView;
 import top.ylcao.hotalmgr.view.RoomView;
 import top.ylcao.hotalmgr.view.StoreView;
 
@@ -12,10 +12,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class StoreHandler extends MouseAdapter {
 
@@ -30,7 +28,6 @@ public class StoreHandler extends MouseAdapter {
 
     private void initPopupMenu() {
         popupMenu = new JPopupMenu();
-        // TODO: 完成剩余功能
         JMenuItem item = new JMenuItem("进入门店");
         item.addActionListener(new ActionListener() {
             @Override
@@ -48,7 +45,20 @@ public class StoreHandler extends MouseAdapter {
         item.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Store store = null;
+                // 搜索右键的门店
+                for (Store s : storeView.getAllStoreInfo()) {
+                    if (s.getName().equals(storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()).getName())) {
+                        store = s;
+                        break;
+                    }
+                }
+                assert store != null;
+                String storeStringInfo = "门店名:" + store.getName() + "\n" +
+                        "门店地址:" + store.getAddress() + "\n" +
+                        "经理:" + store.getManager() + "\n" +
+                        "经理电话:" + store.getPhone() + "\n";
+                JOptionPane.showMessageDialog(storeView, storeStringInfo);
                 Log.p("查看门店信息:" + storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()).getName());
             }
         });
@@ -57,19 +67,50 @@ public class StoreHandler extends MouseAdapter {
         item.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Store store = null;
+                // 搜索右键的门店
+                for (Store s : storeView.getAllStoreInfo()) {
+                    if (s.getName().equals(storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()).getName())) {
+                        store = s;
+                        break;
+                    }
+                }
+                EditStoreView editStoreView = new EditStoreView(store, StoreHandler.this);
                 Log.p("编辑门店:" + storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()).getName());
             }
         });
         popupMenu.add(item);
+
+
         item = new JMenuItem("删除门店");
         item.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Log.p("删除门店:" + storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()).getName());
+                String storeName = storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()).getName();
+                for (int r = 0; r < StoreHandler.this.getStoreView().getAllStoreInfo().size(); r++) {
+                    if (StoreHandler.this.getStoreView().getAllStoreInfo().get(r).getName().equals(storeName)) {
+                        // 删除room文件
+                        StoreHandler.this.getStoreView().getAllStoreInfo().get(r).getRoomFile().delete();
+                        // 删除store
+                        StoreHandler.this.getStoreView().getAllStoreInfo().remove(r);
+                        // 更新table
+                        storeView.getAllStoreVector().remove(r);
+                        storeView.getTableModel().fireTableRowsUpdated(r, r);
+                        // 更新store文件
+                        try {
+                            updateAllStoreFile();
+                        } catch (IOException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                        break;
+                    }
+                }
+                Log.p("删除门店:" + storeName);
             }
         });
         popupMenu.add(item);
 
+        // TODO: 完成剩余功能
         item = new JMenuItem("统计报表");
         item.addActionListener(new ActionListener() {
             @Override
@@ -79,23 +120,23 @@ public class StoreHandler extends MouseAdapter {
         });
         popupMenu.add(item);
 
+        // TODO: 完成剩余功能
         item = new JMenuItem("添加门店");
         item.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Log.p("添加门店:" + storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()).getName());
+                // 更新store文件
+                try {
+                    updateAllStoreFile();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+                Log.p("添加门店:");
             }
         });
         popupMenu.add(item);
 
-        item = new JMenuItem("搜索门店");
-        item.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Log.p("搜索门店:" + storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()).getName());
-            }
-        });
-        popupMenu.add(item);
     }
 
     private void initHandler() {
@@ -117,7 +158,7 @@ public class StoreHandler extends MouseAdapter {
         });
     }
 
-    private void updateAllStoreFile() throws IOException {
+    public void updateAllStoreFile() throws IOException {
         BufferedWriter out = new BufferedWriter(new FileWriter(storeView.getStoreFile()));
         for (Store store : storeView.getAllStoreInfo()) {
             out.write(store.getFormatStoreInfo());
@@ -128,5 +169,7 @@ public class StoreHandler extends MouseAdapter {
         out.close();
     }
 
-
+    public StoreView getStoreView() {
+        return storeView;
+    }
 }

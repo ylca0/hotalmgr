@@ -32,7 +32,7 @@ public class RoomHandler extends MouseAdapter{
         popupMenu.add(createMenuItem("入住登记", new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+//                roomView.get
             }
         }));
         popupMenu.add(createMenuItem("退房", new ActionListener() {
@@ -68,7 +68,7 @@ public class RoomHandler extends MouseAdapter{
         if (e.getButton() == MouseEvent.BUTTON3) {
             try {
                 JLabel label = (JLabel) roomView.panel.getComponentAt(e.getPoint());
-                Log.p("右键" + Integer.parseInt(label.getText().substring(6).split("<")[0]));
+                Log.p("右键客房:" + Integer.parseInt(label.getText().substring(6).split("<")[0]));
                 popupMenu.show(roomView, e.getX()+15, e.getY()+label.getHeight()+5);
             } catch (Exception ex) {
                 Log.p("未点击到客房");
@@ -76,7 +76,7 @@ public class RoomHandler extends MouseAdapter{
         } else if (e.getButton() == MouseEvent.BUTTON1) {
             JLabel label = (JLabel) roomView.panel.getComponentAt(e.getPoint());
             Room room = roomView.store.getRoomList().get(Integer.parseInt(label.getText().substring(6).split("<")[0]));
-            Log.p("左键" + Integer.parseInt(label.getText().substring(6).split("<")[0]));
+            Log.p("查看客房信息:" + Integer.parseInt(label.getText().substring(6).split("<")[0]));
             JOptionPane.showMessageDialog(roomView, room.toString());
         }
     }

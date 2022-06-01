@@ -11,7 +11,7 @@ import javax.swing.*;
 
 public class RoomView extends JFrame{
 
-    public ArrayList<JLabel> labels = new ArrayList<>();
+//    public ArrayList<JLabel> labels = new ArrayList<>();
     public Store store;
     public final JPanel panel;
 
