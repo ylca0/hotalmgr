@@ -28,7 +28,7 @@ public class Room {
                         "类型:" + category + '\n' +
                         "价格:" + price + '\n' +
                         "是否占用:" + isUsing + '\n' +
-                        "预定日期:" + Log.getFTime(date.split("-")[0]) + "至" + Log.getFTime(date.split("-")[1]) + '\n' +
+                        "使用日期:" + Log.getFTime(date.split("-")[0]) + "至" + Log.getFTime(date.split("-")[1]) + '\n' +
                         "客人:" + guest + '\n' +
                         "客人电话:" + phone;
             } catch (ParseException e) {

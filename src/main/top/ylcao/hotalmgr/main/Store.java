@@ -1,6 +1,8 @@
 package top.ylcao.hotalmgr.main;
 
 
+import top.ylcao.hotalmgr.handler.StoreHandler;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +27,8 @@ public class Store {
         updateSaleHashMap(saleString);
         Log.p("成功构造门店:" + this.toString());
     }
+
+
 
     public ArrayList<Room> getRoomList() {
         return roomList;
@@ -98,7 +102,7 @@ public class Store {
             Log.p("创建文件:" + newRoomFile.getAbsolutePath());
             roomFile = newRoomFile;
             ArrayList<Room> storeInfo = new ArrayList<>();
-            Room room = new Room("未定义", "0", "否", "2022:05:31:12:00:00-2022:05:31:16:00:00", "", "");
+            Room room = new Room("钟点房", "100", "否", "2022:05:31:12:00:00-2022:05:31:16:00:00", "", "");
             storeInfo.add(room);
             return storeInfo;
         }
@@ -108,15 +112,20 @@ public class Store {
 
 
 
-    public void updateAllRoomFile() throws IOException {
-        BufferedWriter out = new BufferedWriter(new FileWriter(roomFile.getAbsolutePath()));
-        for (Room room : roomList) {
-            out.write(room.getFormatRoomInfo());
-            if (!roomList.get(roomList.size()-1).equals(room)) {
-                out.write("\n");
+    public void updateAllRoomFile() {
+        try {
+            BufferedWriter out = new BufferedWriter(new FileWriter(roomFile.getAbsolutePath()));
+            for (Room room : roomList) {
+                out.write(room.getFormatRoomInfo());
+                if (!roomList.get(roomList.size()-1).equals(room)) {
+                    out.write("\n");
+                }
             }
+            out.close();
+        } catch (Exception ex) {
+            Log.p(ex.toString());
         }
-        out.close();
+
     }
 
 
@@ -150,6 +159,10 @@ public class Store {
 
     public void setManager(String manager) {
         this.manager = manager;
+    }
+
+    public HashMap<Integer, Integer> getSaleHashMap() {
+        return saleHashMap;
     }
 
     public String getFormatSaleHashMap() {

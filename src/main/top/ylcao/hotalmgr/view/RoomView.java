@@ -5,7 +5,6 @@ import top.ylcao.hotalmgr.handler.RoomHandler;
 import top.ylcao.hotalmgr.main.Store;
 import java.awt.*;
 import java.io.*;
-import java.util.ArrayList;
 import javax.swing.*;
 
 
@@ -41,16 +40,26 @@ public class RoomView extends JFrame{
             label.setOpaque(true);
             label.setBorder(BorderFactory.createLineBorder(Color.black));
             if (isEmpty) {
-                label.setBackground(Color.GREEN);
-                label.setForeground(Color.GRAY);
-                label.setFont(new Font("黑体", Font.ITALIC, 16));
+                updateEmptyView(label);
             } else {
-                label.setBackground(Color.RED);
-                label.setForeground(Color.BLACK);       // 设置白色字体
-                label.setFont(new Font("黑体", Font.BOLD, 16));
+                updateNoEmptyView(label);
             }
             panel.add(label);
         }
+    }
+
+    public void updateEmptyView(JLabel label) {
+        label.setText(label.getText().replace("占用", "空房"));
+        label.setBackground(Color.GREEN);
+        label.setForeground(Color.GRAY);
+        label.setFont(new Font("黑体", Font.ITALIC, 16));
+    }
+
+    public void updateNoEmptyView(JLabel label) {
+        label.setText(label.getText().replace("空房", "占用"));
+        label.setBackground(Color.RED);
+        label.setForeground(Color.BLACK);       // 设置白色字体
+        label.setFont(new Font("黑体", Font.BOLD, 16));
     }
 
 }
