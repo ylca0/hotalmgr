@@ -4,7 +4,6 @@ package top.ylcao.hotalmgr.main;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Objects;
 
 public class Store {
@@ -13,16 +12,16 @@ public class Store {
     private String phone;
     private String manager;
     private File roomFile;
-    private HashMap<Integer, Integer> sale;
+    private HashMap<Integer, Integer> saleHashMap;
     private ArrayList<Room> roomList;
 
-    public Store(String name, String address, String phone, String manager, String saleInfo) {
+    public Store(String name, String address, String phone, String manager, String saleString) {
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.manager = manager;
         this.roomList = initRoomList();
-        this.sale = initSale(saleInfo);
+        updateSaleHashMap(saleString);
         Log.p("成功构造门店:" + this.toString());
     }
 
@@ -36,23 +35,30 @@ public class Store {
 
     @Override
     public String toString() {
-        return "Store{" +
-                "name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", manager='" + manager + '\'' +
-                ", roomFile=" + roomFile +
-                ", sale=" + sale +
-                ", roomList=" + roomList +
-                '}';
+        return getFormatStoreInfo() + "\n以下是房间列表:\n" + roomList;
     }
 
-    private HashMap<Integer, Integer> initSale(String saleInfo) {
-        String[] saleInfoSplit = saleInfo.split(".");
+    private void updateSaleHashMap(String saleString) {
+        HashMap<Integer, Integer> result = new HashMap<>();
+        String[] saleInfoSplit = saleString.split(",");
         for (String eachSaleInfoSplit : saleInfoSplit) {
-
+            String MM = eachSaleInfoSplit.split(":")[0];
+            String money = eachSaleInfoSplit.split(":")[1];
+            result.put(Integer.parseInt(MM), Integer.parseInt(money));
         }
-        return null;
+        this.saleHashMap = result;
+    }
+
+    public String getFormatStoreInfo() {
+        StringBuilder saleString = new StringBuilder();
+        for (Integer month : saleHashMap.keySet()) {
+            saleString.append(month);
+            saleString.append(":");
+            saleString.append(saleHashMap.get(month));
+            saleString.append(",");
+        }
+        saleString.deleteCharAt(saleString.lastIndexOf(","));
+        return name + ";" + address + ";" + phone + ";" + manager + ";" + saleString.toString() + ";";
     }
 
     private ArrayList<Room> initRoomList() {

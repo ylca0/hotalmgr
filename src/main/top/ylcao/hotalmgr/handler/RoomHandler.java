@@ -28,7 +28,7 @@ public class RoomHandler extends MouseAdapter{
 
     private void initMenu() {
         popupMenu = new JPopupMenu();
-        // TODO: 完善其余功能
+//         TODO: 完善其余功能
         popupMenu.add(createMenuItem("入住登记", new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

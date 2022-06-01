@@ -1,6 +1,7 @@
 package top.ylcao.hotalmgr.handler;
 
 import top.ylcao.hotalmgr.main.Log;
+import top.ylcao.hotalmgr.main.Room;
 import top.ylcao.hotalmgr.main.Store;
 import top.ylcao.hotalmgr.view.RoomView;
 import top.ylcao.hotalmgr.view.StoreView;
@@ -10,6 +11,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -44,6 +48,7 @@ public class StoreHandler extends MouseAdapter {
         item.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 Log.p("查看门店信息:" + storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()).getName());
             }
         });
@@ -112,10 +117,15 @@ public class StoreHandler extends MouseAdapter {
         });
     }
 
-    private void updateStoreFile(ArrayList<Store> allStoreInfo) {
-        for (Store store : allStoreInfo) {
-
+    private void updateAllStoreFile() throws IOException {
+        BufferedWriter out = new BufferedWriter(new FileWriter(storeView.getStoreFile()));
+        for (Store store : storeView.getAllStoreInfo()) {
+            out.write(store.getFormatStoreInfo());
+            if (!storeView.getAllStoreInfo().get(storeView.getAllStoreInfo().size()-1).equals(store)) {
+                out.write("\n");
+            }
         }
+        out.close();
     }
 
 

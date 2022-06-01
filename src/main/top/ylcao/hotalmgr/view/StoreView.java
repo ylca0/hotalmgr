@@ -21,6 +21,7 @@ public class StoreView extends JFrame {
     private ArrayList<Store> allStoreInfo;
     private Vector<Vector<String>> allStoreVector;
     private TableColumnModel tableColumnModel;
+    private File storeFile;
     Container contentPane;
     JTable jTable;
 
@@ -55,7 +56,7 @@ public class StoreView extends JFrame {
             // 搜索到唯一的store.txt文件
             if ( filename.equals("store.txt") ) {
                 Log.p("读取数据:" + filename);
-                File storeFile = new File(dir.getAbsolutePath() + "\\" + filename);
+                this.storeFile = new File(dir.getAbsolutePath() + "\\" + filename);
                 StringBuilder content = new StringBuilder();
                 try {
                     byte[] temp = new byte[1024];
@@ -163,4 +164,9 @@ public class StoreView extends JFrame {
     public void setjTable(JTable jTable) {
         this.jTable = jTable;
     }
+
+    public File getStoreFile() {
+        return storeFile;
+    }
+
 }
