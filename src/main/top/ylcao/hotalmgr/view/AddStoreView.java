@@ -8,7 +8,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.IOException;
 import java.util.Vector;
 
@@ -44,7 +43,7 @@ public class AddStoreView extends JFrame{
         storePhoneField = new JTextField();
         confirmButton = new JButton("确定");
 
-        JPanel panel = new JPanel(new GridLayout(4, 2, 5, 5));
+        JPanel panel = new JPanel(new GridLayout(5, 2, 5, 10));
         panel.add(storeNameLabel);
         panel.add(storeNameField);
         panel.add(storeAddressLabel);
@@ -53,10 +52,11 @@ public class AddStoreView extends JFrame{
         panel.add(storeManagerField);
         panel.add(storePhoneLabel);
         panel.add(storePhoneField);
+        panel.add(new JPanel());
         panel.add(confirmButton);
         this.add(panel);
 
-        setSize(300, 400);
+        setSize(300, 200);
         // 居中
         setLocationRelativeTo(null);
         // 设置不可修改改变大小
@@ -87,7 +87,7 @@ public class AddStoreView extends JFrame{
                 storeHandler.getStoreView().getAllStoreVector().get(size-1).addElement(storeAddressField.getText());
                 storeHandler.getStoreView().getAllStoreVector().get(size-1).addElement(storeManagerField.getText());
                 storeHandler.getStoreView().getAllStoreVector().get(size-1).addElement(storePhoneField.getText());
-                storeHandler.getStoreView().getTableModel().fireTableRowsUpdated(size-1, size-1);
+                storeHandler.getStoreView().getTableModel().fireTableDataChanged();
 
                 // 更新store文件
                 try {

@@ -54,60 +54,21 @@ public class LoginView extends JFrame {
         contentPane.add(title, BorderLayout.NORTH);
         contentPane.add(loginPanel, BorderLayout.CENTER);
 
-        setSize(300, 400);
-        int fraWidth = this.getWidth();//frame的宽
-        int fraHeight = this.getHeight();//frame的高
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int screenWidth = screenSize.width;
-        int screenHeight = screenSize.height;
-        this.setSize(screenWidth / 4, screenHeight / 4);
-        this.setLocation(0, 0);
-        float proportionW = screenWidth / fraWidth;
-        float proportionH = screenHeight / fraHeight;
-
-        modifyComponentSize(this, proportionW, proportionH);
-        this.toFront();
-        accountText.setPreferredSize(new Dimension(this.getWidth()-200, 40));
-        passwordText.setPreferredSize(new Dimension(this.getWidth()-200, 40));
+        setSize(350, 250);
+        accountText.setPreferredSize(new Dimension(this.getWidth()-200, 30));
+        passwordText.setPreferredSize(new Dimension(this.getWidth()-200, 30));
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
     }
 
-    /**
-     * frame中的控件自适应frame大小：改变大小位置和字体
-     */
-    public static void modifyComponentSize(JFrame frame,float proportionW,float proportionH){
-
-        try
-        {
-            Component[] components = frame.getRootPane().getContentPane().getComponents();
-            for(Component co:components)
-            {
-                float locX = co.getX() * proportionW;
-                float locY = co.getY() * proportionH;
-                float width = co.getWidth() * proportionW;
-                float height = co.getHeight() * proportionH;
-                co.setLocation((int)locX, (int)locY);
-                co.setSize((int)width, (int)height);
-                int size = (int)(co.getFont().getSize() * proportionH);
-                Font font = new Font(co.getFont().getFontName(), co.getFont().getStyle(), size);
-                co.setFont(font);
-            }
-        }
-        catch (Exception e)
-        {
-            Log.p("LoginView Error:" + e);
-        }
-
-    }
 
     private void loginLayout() {
 
-        title.setFont(new Font("微软雅黑", Font.PLAIN, 15));
-        subTitle.setFont(new Font("微软雅黑", Font.PLAIN, 20));
-        Font MSYAHEI = new Font("微软雅黑", Font.PLAIN, 30);
+        title.setFont(new Font("微软雅黑", Font.PLAIN, 30));
+        subTitle.setFont(new Font("微软雅黑", Font.PLAIN, 10));
+        Font MSYAHEI = new Font("微软雅黑", Font.PLAIN, 15);
         accountLabel.setFont(MSYAHEI);
         accountText.setFont(MSYAHEI);
         passwordLabel.setFont(MSYAHEI);

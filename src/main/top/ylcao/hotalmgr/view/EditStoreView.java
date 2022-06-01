@@ -45,7 +45,7 @@ public class EditStoreView extends JFrame {
         storePhoneField = new JTextField(store.getPhone());
         confirmButton = new JButton("确定");
 
-        JPanel panel = new JPanel(new GridLayout(4, 2, 5, 5));
+        JPanel panel = new JPanel(new GridLayout(5, 2, 5,  10));
         panel.add(storeNameLabel);
         panel.add(storeNameField);
         panel.add(storeAddressLabel);
@@ -54,10 +54,11 @@ public class EditStoreView extends JFrame {
         panel.add(storeManagerField);
         panel.add(storePhoneLabel);
         panel.add(storePhoneField);
+        panel.add(new JPanel());
         panel.add(confirmButton);
         this.add(panel);
 
-        setSize(300, 400);
+        setSize(300, 200);
         // 居中
         setLocationRelativeTo(null);
         // 设置不可修改改变大小
@@ -96,7 +97,7 @@ public class EditStoreView extends JFrame {
                     if (stringVector.get(0).equals(preName)) {
                         stringVector.set(0, EditStoreView.this.storeNameField.getText());
                         // 更新对应行列的数据（酒店名）
-                        storeHandler.getStoreView().getTableModel().fireTableCellUpdated(r, 0);
+                        storeHandler.getStoreView().getTableModel().fireTableDataChanged();
                         break;
                     }
                 }

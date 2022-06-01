@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2bd6bad-be03-407f-bad4-050b2d40bb94" name="Changes" comment="Update add store function">
-      <change afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/Statistics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/top/ylcao/hotalmgr/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/top/ylcao/hotalmgr/Statistics.java" afterDir="false" />
+    <list default="true" id="b2bd6bad-be03-407f-bad4-050b2d40bb94" name="Changes" comment="Update add store sale statistic function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/store.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/store.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/StoreHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/StoreHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/AddStoreView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/AddStoreView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/EditStoreView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/EditStoreView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/StoreView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/StoreView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +155,7 @@
       <workItem from="1653976763870" duration="10368000" />
       <workItem from="1653995903384" duration="12339000" />
       <workItem from="1654012039544" duration="1176000" />
-      <workItem from="1654013234794" duration="18799000" />
+      <workItem from="1654013234794" duration="19747000" />
     </task>
     <task id="LOCAL-00001" summary="UI completed">
       <created>1654012278113</created>
@@ -205,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654073665394</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update add store sale statistic function">
+      <created>1654075025184</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654075025184</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +239,8 @@
     <MESSAGE value="Update Info Complete" />
     <MESSAGE value="Update some function" />
     <MESSAGE value="Update add store function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update add store function" />
+    <MESSAGE value="Update add store sale statistic function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update add store sale statistic function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

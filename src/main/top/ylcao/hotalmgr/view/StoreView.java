@@ -30,7 +30,7 @@ public class StoreView extends JFrame {
         super("门店管理");
         initAllStoreInfo();
         initAllStudentsTable();
-        setSize(600, 600);
+        setSize(600, 400);
         // 居中
         setLocationRelativeTo(null);
         // 关闭时销毁

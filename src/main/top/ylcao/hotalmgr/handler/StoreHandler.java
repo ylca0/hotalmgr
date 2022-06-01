@@ -112,7 +112,7 @@ public class StoreHandler extends MouseAdapter {
         });
         popupMenu.add(item);
 
-        // TODO: 完成剩余功能
+
         item = new JMenuItem("统计报表");
         item.addActionListener(new ActionListener() {
             @Override
