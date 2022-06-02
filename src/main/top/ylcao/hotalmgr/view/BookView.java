@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class BookView extends JFrame{
     private JLabel cateLabel;
@@ -22,8 +23,8 @@ public class BookView extends JFrame{
     private RoomHandler roomHandler;
 
 
-    public BookView(RoomHandler rh) {
-        super("预定房间");
+    public BookView(RoomHandler rh, String title) {
+        super(title);
         roomHandler = rh;
         initLayout();
         initHandler();
@@ -81,24 +82,20 @@ public class BookView extends JFrame{
                 roomHandler.findEventRoom(roomHandler.mouseEvent).setDate(dateField.getText());
                 roomHandler.findEventRoom(roomHandler.mouseEvent).setGuest(guestField.getText());
                 roomHandler.findEventRoom(roomHandler.mouseEvent).setPhone(phoneField.getText());
-                // 更新store里的saleHashMap
+                // 更新store里的营收
                 roomHandler.roomView.store.getSaleHashMap().put((Integer) roomHandler.roomView.store.getSaleHashMap().keySet().toArray()[roomHandler.roomView.store.getSaleHashMap().keySet().size() - 1], roomHandler.roomView.store.getSaleHashMap().get(roomHandler.roomView.store.getSaleHashMap().keySet().toArray()[roomHandler.roomView.store.getSaleHashMap().keySet().size() - 1]) + Integer.parseInt(priceField.getText()));
-                Log.p("预定房间完成:" + roomHandler.findEventRoom(roomHandler.mouseEvent).getFormatRoomInfo());
                 // 修改房间外观
                 roomHandler.roomView.updateNoEmptyView((JLabel) roomHandler.roomView.panel.getComponent(roomHandler.findEventNum(roomHandler.mouseEvent)));
+                // 更新room文件
+                roomHandler.roomView.store.updateAllRoomFile();
+                // 更新store文件
+                try {
+                    roomHandler.roomView.storeHandler.updateAllStoreFile();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
 
-
-
-                System.out.println(roomHandler.roomView.store.getFormatStoreInfo());
-
-
-                // TODO: 更新room文件
-//                roomView.store.updateAllRoomFile();
-                // TODO: 更新store信息(营收)
-//                roomView.store.
-                // TODO: 更新store文件(营收)
-
-
+                Log.p("预定房间完成:" + roomHandler.findEventRoom(roomHandler.mouseEvent).getFormatRoomInfo());
                 BookView.this.dispose();
             }
         });

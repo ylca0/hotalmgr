@@ -4,6 +4,7 @@ package top.ylcao.hotalmgr.handler;
 import top.ylcao.hotalmgr.main.Log;
 import top.ylcao.hotalmgr.main.Room;
 import top.ylcao.hotalmgr.view.BookView;
+import top.ylcao.hotalmgr.view.EditRoomView;
 import top.ylcao.hotalmgr.view.RoomView;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -30,37 +31,45 @@ public class RoomHandler extends MouseAdapter{
 
     private void initMenu() {
         popupMenu = new JPopupMenu();
-//         TODO: 完善其余功能
         popupMenu.add(createMenuItem("入住登记", new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // 入住登记
-                new BookView(RoomHandler.this);
+                new BookView(RoomHandler.this, "入住登记");
             }
         }));
         popupMenu.add(createMenuItem("退房", new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // 更新信息
+                findEventRoom(mouseEvent).setIsUsing("否");
+                // 更新外观
+                roomView.updateEmptyView((JLabel) roomView.panel.getComponent(findEventNum(mouseEvent)));
+                // 更新room文件
+                roomView.store.updateAllRoomFile();
             }
         }));
         popupMenu.add(createMenuItem("预定", new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                new BookView(RoomHandler.this, "预定房间");
             }
         }));
-        popupMenu.add(createMenuItem("续订", new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            }
-        }));
-        popupMenu.add(createMenuItem("查询", new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            }
-        }));
+//        popupMenu.add(createMenuItem("续订", new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//
+//            }
+//        }));
+//        popupMenu.add(createMenuItem("查询", new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//            }
+//        }));
         popupMenu.add(createMenuItem("修改", new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                new EditRoomView(RoomHandler.this, "修改房间");
             }
         }));
     }

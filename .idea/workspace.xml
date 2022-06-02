@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2bd6bad-be03-407f-bad4-050b2d40bb94" name="Changes" comment="Optimize UI">
-      <change afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/BookView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/EditRoomView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/store.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/store.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/RoomHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/RoomHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/StoreHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/StoreHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/BookView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/BookView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/EditRoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/EditRoomView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/RoomView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/RoomView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +155,7 @@
       <workItem from="1653976763870" duration="10368000" />
       <workItem from="1653995903384" duration="12339000" />
       <workItem from="1654012039544" duration="1176000" />
-      <workItem from="1654013234794" duration="27490000" />
+      <workItem from="1654013234794" duration="28636000" />
     </task>
     <task id="LOCAL-00001" summary="UI completed">
       <created>1654012278113</created>
@@ -228,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654100971295</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Optimize UI">
+      <created>1654100988199</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1654100988199</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

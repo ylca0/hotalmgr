@@ -35,7 +35,7 @@ public class StoreHandler extends MouseAdapter {
             public void actionPerformed(ActionEvent e) {
                 Log.p("进入门店:" + storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()).getName());
                 try {
-                    RoomView roomView = new RoomView(storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()));
+                    RoomView roomView = new RoomView(storeView.getAllStoreInfo().get(storeView.getjTable().getSelectedRow()), StoreHandler.this);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }

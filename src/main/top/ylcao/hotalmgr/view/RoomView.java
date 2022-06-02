@@ -2,6 +2,7 @@ package top.ylcao.hotalmgr.view;
 
 
 import top.ylcao.hotalmgr.handler.RoomHandler;
+import top.ylcao.hotalmgr.handler.StoreHandler;
 import top.ylcao.hotalmgr.main.Store;
 import java.awt.*;
 import java.io.*;
@@ -12,11 +13,13 @@ public class RoomView extends JFrame{
 
 //    public ArrayList<JLabel> labels = new ArrayList<>();
     public Store store;
+    public StoreHandler storeHandler;
     public final JPanel panel;
 
-    public RoomView(Store store) throws IOException {
+    public RoomView(Store store, StoreHandler sh) throws IOException {
         super("房间管理:" + store.getName());
         this.store = store;
+        this.storeHandler = sh;
         this.setSize(700, 600);
         // 设置窗体位置居中显示
         this.setLocationRelativeTo(null);
