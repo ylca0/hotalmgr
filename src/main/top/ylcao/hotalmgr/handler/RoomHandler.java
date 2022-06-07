@@ -23,6 +23,7 @@ public class RoomHandler extends MouseAdapter{
         initMenu();
     }
 
+
     private JMenuItem createMenuItem(String text, ActionListener action) {
         JMenuItem item = new JMenuItem(text);
         item.addActionListener(action);

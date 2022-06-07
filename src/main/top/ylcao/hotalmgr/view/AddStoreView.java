@@ -81,12 +81,12 @@ public class AddStoreView extends JFrame{
                 // 添加到store列表里
                 storeHandler.getStoreView().getAllStoreInfo().add(store);
                 // 更新table
-                storeHandler.getStoreView().getAllStoreVector().addElement(new Vector<String>());
-                int size = storeHandler.getStoreView().getAllStoreVector().size();
-                storeHandler.getStoreView().getAllStoreVector().get(size-1).addElement(storeNameField.getText());
-                storeHandler.getStoreView().getAllStoreVector().get(size-1).addElement(storeAddressField.getText());
-                storeHandler.getStoreView().getAllStoreVector().get(size-1).addElement(storeManagerField.getText());
-                storeHandler.getStoreView().getAllStoreVector().get(size-1).addElement(storePhoneField.getText());
+                Vector<String> newVector = new Vector<String>();
+                newVector.addElement(storeNameField.getText());
+                newVector.addElement(storeAddressField.getText());
+                newVector.addElement(storeManagerField.getText());
+                newVector.addElement(storePhoneField.getText());
+                storeHandler.getStoreView().getAllStoreVector().addElement(newVector);
                 storeHandler.getStoreView().getTableModel().fireTableDataChanged();
 
                 // 更新store文件

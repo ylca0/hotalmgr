@@ -2,6 +2,7 @@ package top.ylcao.hotalmgr.main;
 
 import top.ylcao.hotalmgr.view.LoginView;
 
+
 public class Main {
 
     public static void main(String[] args) {

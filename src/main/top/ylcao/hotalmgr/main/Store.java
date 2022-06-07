@@ -91,6 +91,7 @@ public class Store {
                 Room room = null;
                 for (String s : roomInfoStr) {
                     String[] roomInfoStrSplit = s.split(";");
+                    System.out.println(s);
                     room = new Room(roomInfoStrSplit[0], roomInfoStrSplit[1], roomInfoStrSplit[2], roomInfoStrSplit[3], roomInfoStrSplit[4], roomInfoStrSplit[5]);
                     storeInfo.add(room);
                 }
@@ -102,8 +103,9 @@ public class Store {
             Log.p("创建文件:" + newRoomFile.getAbsolutePath());
             roomFile = newRoomFile;
             ArrayList<Room> storeInfo = new ArrayList<>();
-            Room room = new Room("钟点房", "100", "否", "2022:05:31:12:00:00-2022:05:31:16:00:00", "", "");
-            storeInfo.add(room);
+            for (int i = 0; i < 36; i++) {
+                storeInfo.add(new Room("钟点房", "100", "否", "2022:05:31:12:00:00-2022:05:31:16:00:00", "未知", "未知"));
+            }
             return storeInfo;
         }
         Log.p("roomList初始化失败!");

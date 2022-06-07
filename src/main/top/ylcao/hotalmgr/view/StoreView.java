@@ -112,7 +112,7 @@ public class StoreView extends JFrame {
         // 新建内容面板
         this.contentPane = getContentPane();
         // 创建滑动面板
-        JScrollPane jScrollPane = new JScrollPane((jTable));
+        JScrollPane jScrollPane = new JScrollPane(jTable);
         // 获取表头
         JTableHeader tableHeader = jTable.getTableHeader();
         // 设置表头字体
