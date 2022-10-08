@@ -85,18 +85,22 @@ public class EditStoreView extends JFrame {
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
+
                 // 对应的门店room文件改名
                 String newFileAbsolutePath = store.getRoomFile().getAbsolutePath().substring(0, store.getRoomFile().getAbsolutePath().lastIndexOf("\\")+1) + "room_" + EditStoreView.this.storeNameField.getText() + ".txt";
                 System.out.println(newFileAbsolutePath);
                 store.getRoomFile().renameTo(new File(newFileAbsolutePath));
 
-                // 修改门店页面table
-                // 查找到相应行
+
+                // 修改门店页面table：查找到相应行
                 for (int r = 0; r < storeHandler.getStoreView().getAllStoreVector().size(); r++) {
                     Vector<String> stringVector = storeHandler.getStoreView().getAllStoreVector().get(r);
                     if (stringVector.get(0).equals(preName)) {
                         stringVector.set(0, EditStoreView.this.storeNameField.getText());
-                        // 更新对应行列的数据（酒店名）
+                        stringVector.set(1, EditStoreView.this.storeAddressField.getText());
+                        stringVector.set(2, EditStoreView.this.storeManagerField.getText());
+                        stringVector.set(3, EditStoreView.this.storePhoneField.getText());
+                        // 更新对应行列的数据
                         storeHandler.getStoreView().getTableModel().fireTableDataChanged();
                         break;
                     }

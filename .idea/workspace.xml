@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2bd6bad-be03-407f-bad4-050b2d40bb94" name="Changes" comment="1.0-RELEASE">
+    <list default="true" id="b2bd6bad-be03-407f-bad4-050b2d40bb94" name="Changes" comment="1.1-RELEASE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/store.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/store.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/RoomHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/handler/RoomHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/main/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/AddStoreView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/AddStoreView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/EditStoreView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/EditStoreView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/StoreView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/top/ylcao/hotalmgr/view/StoreView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +46,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Desktop/designation&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/code/java/hotalmgr&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -158,7 +156,15 @@
       <workItem from="1654013234794" duration="29452000" />
       <workItem from="1654215553135" duration="10581000" />
       <workItem from="1654434981277" duration="4037000" />
-      <workItem from="1654587715978" duration="610000" />
+      <workItem from="1654587715978" duration="689000" />
+      <workItem from="1654607449890" duration="26000" />
+      <workItem from="1654840911989" duration="3144000" />
+      <workItem from="1655016116919" duration="310000" />
+      <workItem from="1655394741598" duration="281000" />
+      <workItem from="1655451318547" duration="13000" />
+      <workItem from="1658831039783" duration="62000" />
+      <workItem from="1659196083545" duration="66000" />
+      <workItem from="1661933323050" duration="97000" />
     </task>
     <task id="LOCAL-00001" summary="UI completed">
       <created>1654012278113</created>
@@ -244,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654143207948</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="1.1-RELEASE">
+      <created>1654588390680</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1654588390680</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +286,8 @@
     <MESSAGE value="Update add store sale statistic function" />
     <MESSAGE value="Optimize UI" />
     <MESSAGE value="1.0-RELEASE" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0-RELEASE" />
+    <MESSAGE value="1.1-RELEASE" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.1-RELEASE" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

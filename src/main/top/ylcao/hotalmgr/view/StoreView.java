@@ -1,11 +1,9 @@
 package top.ylcao.hotalmgr.view;
 
-
 import sun.swing.table.DefaultTableCellHeaderRenderer;
 import top.ylcao.hotalmgr.handler.StoreHandler;
 import top.ylcao.hotalmgr.main.Log;
 import top.ylcao.hotalmgr.main.Store;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
@@ -15,6 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.*;
+
 
 public class StoreView extends JFrame {
 
@@ -73,9 +72,19 @@ public class StoreView extends JFrame {
                 String[] storeInfoStr = content.toString().split("\n");
                 ArrayList<Store> storeInfo = new ArrayList<>();
                 Store store = null;
-                for (String s : storeInfoStr) {
-                    String[] storeInfoStrSplit = s.split(";");
-                    store = new Store(storeInfoStrSplit[0], storeInfoStrSplit[1], storeInfoStrSplit[2], storeInfoStrSplit[3], storeInfoStrSplit[4]);
+                try {
+                    for (String s : storeInfoStr) {
+                        String[] storeInfoStrSplit = s.split(";");
+                        store = new Store(storeInfoStrSplit[0], storeInfoStrSplit[1], storeInfoStrSplit[2], storeInfoStrSplit[3], storeInfoStrSplit[4]);
+                        storeInfo.add(store);
+                    }
+                } catch (Exception exception) {
+                    Log.p("读取门店文件异常");
+                }
+
+                if (storeInfo.size() == 0) {
+                    // 如果没有门店，生成默认门店
+                    store = new Store("默认房间类型", "默认门店地址", "默认经理电话", "默认经理姓名", "1:100,2:300,3:1000");
                     storeInfo.add(store);
                 }
                 return storeInfo;
